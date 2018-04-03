@@ -1,0 +1,50 @@
+<!--Creating a eb page to perform dynimic operations on array using JavaScript-->
+<html>
+	<head>
+		<script>//alert("Hai");</script>
+	</head>
+	<body>
+		<h3>Array's in JavaScript</h3><hr/>
+		Course Name:<input type="text" id="t1"  autofocus /><br></br>
+		<input type="Button" value="Add courses" onclick="f1()" autocomplete />&nbsp;
+		<input type="Button" value="Show courses" onclick="f2()"/>&nbsp;
+		<input type="Button" value="Remove courses" onclick="f3()"/><br/>
+		<div id="table1"></div>
+		<script>
+			var ar=["HTML5","CSS3","AngularJS","JavaScript","BootStrap"];
+			function f1()
+			{
+				var obj=document.getElementById("t1");
+				ar.push(obj.value);
+				f2(); //display
+			}
+			function f2() //display method
+			{
+				var obj=document.getElementById("table1");
+				var str="<table border='' width='100' >";
+				for(var i in ar)
+				{
+					str=str+"<tr>";
+					str=str+"<td>"+(parseInt(i)+1)+"</td>";
+					str=str+"<td>"+ar[i]+"</td>";
+					str=str+"</tr>";
+				}
+				obj.innerHTML=str+"</table>";
+			}
+			function f3()
+			{
+				var obj=document.getElementById("t1");
+				var n=ar.indexOf(obj.value);
+				if (n<0)
+				{
+					alert('You have enterd invalid course name');
+				}
+				else
+				{
+					ar.splice(n,1);
+					f2(); //display
+				}
+			}
+		</script>
+	</body>
+</html>
