@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+  <h2>Programming JavaScript</h2>
+  <hr/>
+  User name&nbsp;<input type="text" id="t1" onkeyup="f1()">
+  <h2 id="x"></h2>
+  <script>
+   function f1()
+   {
+		var obj1=document.getElementById("t1");
+		var obj2=document.getElementById("x");
+		obj2.innerHTML="Welcome to "+obj1.value;
+   }
+  </script>
+ </body>
+</html>
